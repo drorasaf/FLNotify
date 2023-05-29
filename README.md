@@ -32,8 +32,28 @@ Run:
 
 Assuming installation has already happened, if not, please see [Installation](#Installation)
 
-1. Run kubernetes scripts from FedLess TBD?
+1. Login to kubectl, run: `aws eks update-kubeconfig --region region-code --name my-cluster`
+1. Go to Fedless\kubernetes
+1. Go to data-file-store
+1. run `kubectl -f deployment.yaml`
+1. run `kubectl -f service.yaml`
+1. Go to parameter-server
+1. create a helm package: `helm package parameter-server`
+1. deploy helm chart: `helm install -f parameter-server/values.yaml parameter-store parameter-server-0.1.0.tgz`
+1. deploy openwhisk on the cluster: `??`
+1. deploy invoker `??`
+1. deploy aggregator: `?`
 
+## setup clients ??
+
+## Get Data
+
+Run:
+1. `git clone https://github.com/andreas-grafberger/leaf.git`
+1. `cd data\femnist`
+1. `./preprocess.sh -s niid --sf 0.25 -k 100 -t sample --smplseed 1549786595 --spltseed 1549786796 --nochecksum`
+1. `cd ../shakespeare`
+1. `./preprocess.sh -s niid --sf 1.0 -k 64 -tf 0.9 -t sample --nochecksum`
 
 ## Run an experiment
 
