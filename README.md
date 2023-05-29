@@ -1,6 +1,8 @@
-# Thesis
+# FLNotify - Thesis
 
-This repository is composed of 3 different components:
+This code is part of thesis work to establish the FLNotify framework as a keycomponent in future federated learning architectures.
+
+This repository is composed of 4 different components:
 1. infrastructure which contains the code for easily spinning up and down on AWS the required components for FedLess
 1. FLNotify is the package which provides notification for the security
 1. Modified FedLess version to include interaction with FLNotify to allow easy notification to security
