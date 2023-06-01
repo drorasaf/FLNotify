@@ -1,1 +1,5 @@
 flask
+boto3
+python-dotenv
+numpy
+scikit-learn

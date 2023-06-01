@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flnotify-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flnotify-app
+  template:
+    metadata:
+      labels:
+        app: flnotify-app
+    spec:
+      containers:
+      - name: flnotify-app
+        image: drorasaf/flnotify:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flnotify-service
+spec:
+  selector:
+    app: flnotify-app
+  ports:
+  - port: 6000
+    targetPort: 5000
+  type: LoadBalancer
